@@ -432,6 +432,19 @@ Send
                 });
             }
 
+            const scBtn = document.getElementById('mobile-students-corner-btn');
+            const scMenu = document.getElementById('mobile-students-corner-menu');
+            const scIcon = document.getElementById('mobile-students-corner-icon');
+            if (scBtn && scMenu) {
+                scBtn.addEventListener('click', () => {
+                    const isHidden = scMenu.classList.contains('hidden');
+                    scMenu.classList.toggle('hidden');
+                    scMenu.classList.toggle('flex');
+                    scBtn.setAttribute('aria-expanded', String(isHidden));
+                    if (scIcon) scIcon.style.transform = isHidden ? 'rotate(180deg)' : 'rotate(0deg)';
+                });
+            }
+
             const form = document.getElementById('contact-form');
             const note = document.getElementById('contact-form-note');
             if (form) {

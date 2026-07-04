@@ -344,7 +344,7 @@ Explore All Courses
 
 <!-- SSC Toppers Showcase -->
 <section class="py-24 overflow-hidden" id="results">
-<div class="max-w-container-max mx-auto px-margin-desktop">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
 <div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-8">
 <div class="max-w-2xl">
 <div class="font-headline-lg text-headline-lg text-academic-navy mb-4">Wall of Fame: SSC Toppers</div>
@@ -434,7 +434,7 @@ Explore All Courses
 
  <!-- CET Toppers Showcase -->
 <section class="py-24 bg-success-gold scroll-mt-24" id="cet-achievers">
-<div class="max-w-container-max mx-auto px-margin-desktop">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
 <div class="text-center mb-16 max-w-3xl mx-auto">
 <div class="font-headline-lg text-headline-lg text-academic-navy mb-4">Proud to Announce our CET Achievers</div>
 <p class="text-academic-navy font-medium text-body-lg">Our best coaching classes in Pune let the students achieved excellence again. SANCHETI's focused efforts, proven study methodologies, expert teachers, precise study material and accurate test series is what makes all the difference.</p>
@@ -667,6 +667,19 @@ Contact Us
                 mobileBtn.addEventListener('click', () => {
                     mobileMenu.classList.toggle('hidden');
                     mobileMenu.classList.toggle('flex');
+                });
+            }
+
+            const scBtn = document.getElementById('mobile-students-corner-btn');
+            const scMenu = document.getElementById('mobile-students-corner-menu');
+            const scIcon = document.getElementById('mobile-students-corner-icon');
+            if (scBtn && scMenu) {
+                scBtn.addEventListener('click', () => {
+                    const isHidden = scMenu.classList.contains('hidden');
+                    scMenu.classList.toggle('hidden');
+                    scMenu.classList.toggle('flex');
+                    scBtn.setAttribute('aria-expanded', String(isHidden));
+                    if (scIcon) scIcon.style.transform = isHidden ? 'rotate(180deg)' : 'rotate(0deg)';
                 });
             }
 

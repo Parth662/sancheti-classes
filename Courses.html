@@ -199,7 +199,7 @@ Students Corner
 </nav>
     <!-- Header / Hero Section -->
     <header class="relative pt-40 pb-24 overflow-hidden bg-academic-navy text-white">
-        <div class="max-w-container-max mx-auto px-margin-desktop relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+        <div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div class="space-y-6">
                 <span class="inline-block px-4 py-1 rounded-full bg-success-gold/20 text-success-gold font-label-md border border-success-gold/30">
                     ACADEMIC PROGRAMS 2026-2027
@@ -230,7 +230,7 @@ Students Corner
 
     <!-- Core Courses Grid -->
     <main class="py-24 bg-background">
-        <div class="max-w-container-max mx-auto px-margin-desktop">
+        <div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
             <div class="text-center mb-16">
                 <h2 class="font-headline-lg text-headline-lg text-academic-navy mb-4">Explore Our Curriculums</h2>
                 <p class="text-on-surface-variant text-body-lg max-w-2xl mx-auto">Choose the right coaching program to elevate your learning quality and score your desired results.</p>
@@ -362,7 +362,7 @@ Students Corner
 
     <!-- Why Choose Us / Methodology -->
     <section class="py-24 bg-academic-navy text-white">
-        <div class="max-w-container-max mx-auto px-margin-desktop">
+        <div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
             <div class="text-center mb-16">
                 <h2 class="font-headline-lg text-headline-lg text-white mb-4">Why Choose Sancheti Classes?</h2>
                 <p class="text-surface-variant text-body-lg max-w-2xl mx-auto">We do our absolute best to ensure that students follow a clear, encouraging path to prosperity.</p>
@@ -395,7 +395,7 @@ Students Corner
 
     <!-- India's Only Rating Bureau Certificate Section -->
     <section class="py-24 bg-surface-container-low">
-        <div class="max-w-container-max mx-auto px-margin-desktop">
+        <div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
             <div class="bg-white p-8 md:p-12 rounded-3xl border border-surface-variant shadow-md max-w-4xl mx-auto flex flex-col lg:flex-row items-center gap-12">
                 <div class="space-y-6 lg:w-1/2">
                     <span class="inline-block px-4 py-1 rounded-full bg-energy-red/10 text-energy-red font-bold text-xs uppercase tracking-wider">
@@ -425,7 +425,7 @@ Students Corner
 
     <!-- Admission Benefits Section -->
     <section class="py-24 bg-white">
-        <div class="max-w-container-max mx-auto px-margin-desktop grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+        <div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div>
                 <h2 class="font-headline-lg text-headline-lg text-academic-navy mb-6">Benefits of Admission at SANCHETI CLASSES</h2>
                 <div class="space-y-4">
@@ -545,5 +545,30 @@ Students Corner
         © 2020–2026 Sancheti Classes. All rights reserved.
     </div>
 </footer>
+<script>
+        // Mobile menu toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        if (mobileMenuBtn && mobileMenu) {
+            mobileMenuBtn.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+                mobileMenu.classList.toggle('flex');
+            });
+        }
+
+        // Mobile "Students Corner" accordion toggle
+        const scBtn = document.getElementById('mobile-students-corner-btn');
+        const scMenu = document.getElementById('mobile-students-corner-menu');
+        const scIcon = document.getElementById('mobile-students-corner-icon');
+        if (scBtn && scMenu) {
+            scBtn.addEventListener('click', () => {
+                const isHidden = scMenu.classList.contains('hidden');
+                scMenu.classList.toggle('hidden');
+                scMenu.classList.toggle('flex');
+                scBtn.setAttribute('aria-expanded', String(isHidden));
+                if (scIcon) scIcon.style.transform = isHidden ? 'rotate(180deg)' : 'rotate(0deg)';
+            });
+        }
+</script>
 </body>
 </html>
